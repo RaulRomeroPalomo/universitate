@@ -2,8 +2,8 @@ package com.rromero.universitate.models.services;
 
 import org.springframework.stereotype.Service;
 
-import com.rromero.universitate.models.documents.Subject;
-import com.rromero.universitate.models.repository.SubjectRepository;
+import com.rromero.universitate.models.documents.Degree;
+import com.rromero.universitate.models.repository.DegreeRepository;
 
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
@@ -11,14 +11,14 @@ import reactor.core.publisher.Mono;
 @Service
 public class DegreeService {
 
-	private SubjectRepository subjectRepository;
+	private DegreeRepository degreeRepository;
 	
-	public Mono<Subject> getSubjectById(Long id) {
-		return subjectRepository.findById(id);
+	public Mono<Degree> getDegreeById(Long id) {
+		return degreeRepository.findById(id);
 	}
 	
-	public Flux<Subject> getAllSubjects() {
-		return subjectRepository.findAll();
+	public Flux<Degree> getAllDegrees() {
+		return degreeRepository.findAll();
 	}
 	
 }
